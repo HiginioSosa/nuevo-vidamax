@@ -1,0 +1,48 @@
+// Paleta de Colores
+$color-primary-dark: #006341;
+$color-primary-light: #CFE7C5;
+$color-secondary: #EF3C9A;
+$color-dark: #393939;
+$color-white: #FFFFFF;
+
+// Fuentes
+$font-family-base: 'Arial', 'Helvetica', sans-serif;
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-medium: 18px;
+$font-size-large: 24px;
+$font-size-xlarge: 32px;
+
+// Espaciado
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$spacing-xxl: 64px;
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1200px;
+
+// Transiciones
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-full: 50%;
+
+// Sombras
+$box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+// Z-index
+$z-index-navbar: 1000;
+$z-index-dropdown: 1100;
+$z-index-modal: 1200;

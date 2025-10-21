@@ -1,0 +1,113 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Reset básico
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  color: $color-dark;
+  background-color: #F5F5F5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Tipografía
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+}
+
+h1 {
+  font-size: $font-size-xlarge;
+  
+  @include tablet {
+    font-size: $font-size-large;
+  }
+}
+
+h2 {
+  font-size: $font-size-large;
+  
+  @include tablet {
+    font-size: $font-size-medium;
+  }
+}
+
+h3 {
+  font-size: $font-size-medium;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+// Links
+a {
+  color: $color-primary-dark;
+  text-decoration: none;
+  transition: $transition-fast;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+// Botones globales
+button {
+  font-family: $font-family-base;
+}
+
+// Imágenes responsive
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Layout principal
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+}
+
+// Utilidades
+.container {
+  @include container;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+
+// Colores de texto
+.text-primary {
+  color: $color-primary-dark;
+}
+
+.text-secondary {
+  color: $color-secondary;
+}

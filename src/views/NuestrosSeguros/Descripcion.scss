@@ -1,0 +1,66 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.descripcion {
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+    align-items: center;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  &__text {
+    @include flex-column;
+    gap: $spacing-md;
+  }
+
+  &__title {
+    font-size: $font-size-xlarge;
+    color: $color-primary-dark;
+    margin: 0;
+
+    @include tablet {
+      font-size: $font-size-large;
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-medium;
+    color: $color-dark;
+    line-height: 1.6;
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $box-shadow-md;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__faq {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-lg;
+  }
+}

@@ -1,0 +1,61 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.nuestros-seguros {
+  &__header {
+    @include container;
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-sm;
+
+    @include mobile {
+      padding-top: $spacing-sm;
+      padding-bottom: $spacing-xs;
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    background-color: transparent;
+  }
+
+  &__badge-icon {
+    width: 30px;
+    height: 30px;
+    background-color: $color-secondary;
+    border-radius: $border-radius-full;
+    flex-shrink: 0;
+
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__badge-text {
+    font-size: $font-size-xlarge;
+    font-weight: 700;
+    color: $color-dark;
+
+    @include tablet {
+      font-size: $font-size-large;
+    }
+
+    @include mobile {
+      font-size: $font-size-medium;
+    }
+  }
+
+  &__content {
+    @include container;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+    min-height: 60vh;
+
+    @include mobile {
+      padding-top: $spacing-md;
+      padding-bottom: $spacing-md;
+    }
+  }
+}

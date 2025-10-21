@@ -1,0 +1,99 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  background-color: $color-primary-light;
+  padding: $spacing-xl 0 $spacing-md;
+  margin-top: $spacing-xxl;
+
+  &__container {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  &__section {
+    @include flex-column;
+    gap: $spacing-sm;
+  }
+
+  &__title {
+    font-size: $font-size-medium;
+    color: $color-primary-dark;
+    margin-bottom: $spacing-xs;
+    font-weight: 700;
+  }
+
+  &__contact {
+    @include flex-center;
+    justify-content: flex-start;
+    gap: $spacing-xs;
+  }
+
+  &__icon {
+    font-size: $font-size-large;
+  }
+
+  &__phone {
+    font-size: $font-size-large;
+    font-weight: 700;
+    color: $color-primary-dark;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__whatsapp {
+    @include button-base;
+    background-color: $color-white;
+    color: $color-primary-dark;
+    border: 2px solid $color-primary-dark;
+    width: fit-content;
+
+    &:hover {
+      background-color: $color-primary-dark;
+      color: $color-white;
+    }
+  }
+
+  &__hours,
+  &__email {
+    font-size: $font-size-small;
+    color: $color-dark;
+  }
+
+  &__list {
+    list-style: none;
+    @include flex-column;
+    gap: $spacing-xs;
+  }
+
+  &__link {
+    color: $color-dark;
+    font-size: $font-size-small;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $color-primary-dark;
+      padding-left: $spacing-xs;
+    }
+  }
+
+  &__bottom {
+    @include container;
+    text-align: center;
+    margin-top: $spacing-lg;
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba($color-dark, 0.2);
+    font-size: $font-size-small;
+    color: $color-dark;
+  }
+}

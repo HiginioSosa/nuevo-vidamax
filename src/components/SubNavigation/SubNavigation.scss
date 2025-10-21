@@ -1,0 +1,83 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.sub-navigation {
+  background-color: transparent;
+  padding: $spacing-sm 0;
+
+  @include mobile {
+    padding: $spacing-xs 0;
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    gap: 0;
+    padding: 0;
+    overflow-x: auto;
+    background-color: #E8E8E8;
+    border-radius: 25px;
+    width: fit-content;
+    max-width: 100%;
+
+    @include mobile {
+      width: 100%;
+      margin: 0 $spacing-sm;
+      max-width: calc(100% - #{$spacing-md});
+    }
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $color-primary-light;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-primary-dark;
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &__item {
+    padding: $spacing-sm $spacing-lg;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $color-dark;
+    cursor: pointer;
+    transition: $transition-base;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &:first-child {
+      border-radius: 25px 0 0 25px;
+    }
+
+    &:last-child {
+      border-radius: 0 25px 25px 0;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &--active {
+      background-color: $color-primary-light;
+      color: $color-primary-dark;
+      font-weight: 600;
+
+      &:hover {
+        background-color: $color-primary-light;
+      }
+    }
+
+    @include mobile {
+      padding: $spacing-xs $spacing-md;
+      font-size: $font-size-small;
+    }
+  }
+}

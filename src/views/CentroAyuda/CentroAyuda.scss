@@ -1,0 +1,109 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use 'sass:color';
+
+.centro-ayuda {
+  padding: $spacing-xl 0;
+  min-height: 70vh;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: $font-size-xlarge;
+    color: $color-primary-dark;
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    @include tablet {
+      font-size: $font-size-large;
+    }
+  }
+
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__section {
+    margin-bottom: $spacing-xxl;
+
+    h2 {
+      font-size: $font-size-large;
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      color: $color-dark;
+      line-height: 1.8;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__faq {
+    @include flex-column;
+    gap: $spacing-md;
+  }
+
+  &__faq-item {
+    @include card;
+    border-left: 4px solid $color-primary-dark;
+
+    h3 {
+      font-size: $font-size-medium;
+      color: $color-primary-dark;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  &__contact-item {
+    @include card;
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-sm;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $box-shadow-md;
+    }
+
+    h3 {
+      font-size: $font-size-medium;
+      color: $color-primary-dark;
+      margin-bottom: $spacing-xs;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: $font-size-base;
+    }
+  }
+
+  &__contact-icon {
+    font-size: 40px;
+  }
+
+  &__contact-hours {
+    font-size: $font-size-small;
+    color: color.adjust($color-dark, $lightness: 20%);
+  }
+}

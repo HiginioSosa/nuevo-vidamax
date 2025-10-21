@@ -1,0 +1,80 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.home {
+  min-height: 70vh;
+  padding: $spacing-xxl 0;
+
+  @include tablet {
+    padding: $spacing-xl 0;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__hero {
+    text-align: center;
+    margin-bottom: $spacing-xxl;
+  }
+
+  &__title {
+    font-size: $font-size-xlarge;
+    color: $color-primary-dark;
+    margin-bottom: $spacing-md;
+
+    @include tablet {
+      font-size: $font-size-large;
+    }
+  }
+
+  &__description {
+    font-size: $font-size-medium;
+    color: $color-dark;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+
+    @include tablet {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  &__card {
+    @include card;
+    text-align: center;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $box-shadow-lg;
+    }
+  }
+
+  &__card-icon {
+    font-size: 48px;
+    margin-bottom: $spacing-md;
+  }
+
+  &__card-title {
+    font-size: $font-size-medium;
+    color: $color-primary-dark;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__card-text {
+    color: $color-dark;
+    line-height: 1.6;
+  }
+}

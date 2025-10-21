@@ -1,0 +1,71 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.breadcrumbs {
+  background-color: transparent;
+  padding: $spacing-sm 0;
+
+  @include mobile {
+    padding: $spacing-xs 0;
+  }
+
+  &__list {
+    @include container;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    list-style: none;
+    flex-wrap: wrap;
+
+    @include mobile {
+      gap: 4px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: $font-size-small;
+
+    @include mobile {
+      gap: 4px;
+      font-size: 11px;
+    }
+  }
+
+  &__link {
+    color: $color-dark;
+    text-decoration: none;
+    transition: $transition-fast;
+    white-space: nowrap;
+
+    &:hover {
+      color: $color-primary-dark;
+      text-decoration: underline;
+    }
+
+    @include mobile {
+      max-width: 80px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__separator {
+    color: rgba($color-dark, 0.5);
+    user-select: none;
+  }
+
+  &__current {
+    color: $color-primary-dark;
+    font-weight: 500;
+    white-space: nowrap;
+
+    @include mobile {
+      max-width: 120px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

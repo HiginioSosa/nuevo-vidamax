@@ -1,0 +1,132 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use 'sass:color';
+
+.polizas {
+  padding: $spacing-xl 0;
+  min-height: 70vh;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    font-size: $font-size-xlarge;
+    color: $color-primary-dark;
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    @include tablet {
+      font-size: $font-size-large;
+    }
+  }
+
+  &__content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__section {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h2 {
+      font-size: $font-size-large;
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      font-size: $font-size-medium;
+      color: $color-dark;
+      line-height: 1.8;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xxl;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  &__card {
+    @include card;
+    @include flex-column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-sm;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $box-shadow-lg;
+    }
+  }
+
+  &__card-icon {
+    font-size: 48px;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__card-title {
+    font-size: $font-size-medium;
+    color: $color-primary-dark;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__card-text {
+    color: $color-dark;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+  }
+
+  &__card-button {
+    @include button-base;
+    background-color: $color-primary-dark;
+    color: $color-white;
+
+    &:hover {
+      background-color: color.adjust($color-primary-dark, $lightness: -10%);
+    }
+  }
+
+  &__info {
+    @include card;
+    background-color: $color-primary-light;
+    border-left: 4px solid $color-primary-dark;
+
+    h2 {
+      font-size: $font-size-large;
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: $spacing-md;
+
+    li {
+      position: relative;
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-sm;
+      color: $color-dark;
+      line-height: 1.6;
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: $color-primary-dark;
+        font-weight: 700;
+        font-size: $font-size-medium;
+      }
+    }
+  }
+}

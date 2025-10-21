@@ -1,0 +1,181 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use 'sass:color';
+
+.planes {
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__title {
+    font-size: $font-size-xlarge;
+    color: $color-primary-dark;
+    margin-bottom: $spacing-sm;
+
+    @include tablet {
+      font-size: $font-size-large;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-medium;
+    color: $color-dark;
+
+    @include tablet {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xxl;
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  &__card {
+    @include card;
+    @include flex-column;
+    position: relative;
+    border: 2px solid $color-primary-light;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $box-shadow-lg;
+      border-color: $color-primary-dark;
+    }
+
+    &--destacado {
+      border-color: $color-secondary;
+      box-shadow: $box-shadow-md;
+
+      .planes__card-button {
+        background-color: $color-secondary;
+
+        &:hover {
+          background-color: color.adjust($color-secondary, $lightness: -10%);
+        }
+      }
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: $color-secondary;
+    color: $color-white;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $border-radius-lg;
+    font-size: $font-size-small;
+    font-weight: 700;
+  }
+
+  &__card-title {
+    font-size: $font-size-large;
+    color: $color-primary-dark;
+    margin-bottom: $spacing-md;
+    text-align: center;
+  }
+
+  &__card-precio {
+    font-size: $font-size-xlarge;
+    font-weight: 700;
+    color: $color-primary-dark;
+    text-align: center;
+    margin-bottom: $spacing-sm;
+
+    @include tablet {
+      font-size: $font-size-large;
+    }
+  }
+
+  &__card-cobertura {
+    text-align: center;
+    color: $color-dark;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-md;
+    border-bottom: 2px solid $color-primary-light;
+
+    strong {
+      color: $color-primary-dark;
+      font-size: $font-size-medium;
+    }
+  }
+
+  &__card-beneficios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: $spacing-md;
+    flex: 1;
+
+    li {
+      position: relative;
+      padding-left: $spacing-md;
+      margin-bottom: $spacing-sm;
+      color: $color-dark;
+      line-height: 1.6;
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: $color-primary-dark;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__card-button {
+    @include button-base;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    width: 100%;
+
+    &:hover {
+      background-color: color.adjust($color-primary-dark, $lightness: -10%);
+    }
+  }
+
+  &__info {
+    @include card;
+    background-color: $color-primary-light;
+    border-left: 4px solid $color-primary-dark;
+
+    h3 {
+      font-size: $font-size-large;
+      color: $color-primary-dark;
+      margin-bottom: $spacing-md;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: $spacing-md;
+
+      li {
+        position: relative;
+        padding-left: $spacing-md;
+        margin-bottom: $spacing-sm;
+        color: $color-dark;
+        line-height: 1.6;
+
+        &::before {
+          content: 'ℹ️';
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
