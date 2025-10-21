@@ -9,12 +9,12 @@ Aplicación web moderna para la gestión y visualización de seguros de vida Vid
 - [Requisitos Previos](#-requisitos-previos)
 - [Instalación](#-instalación)
 - [Scripts Disponibles](#-scripts-disponibles)
-- [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
+- [Arquitectura del Proyecto](#️-arquitectura-del-proyecto)
 - [Decisiones Técnicas](#-decisiones-técnicas)
 - [Estructura de Carpetas](#-estructura-de-carpetas)
 - [Componentes Principales](#-componentes-principales)
 - [Estilos y Theming](#-estilos-y-theming)
-- [Rutas de la Aplicación](#-rutas-de-la-aplicación)
+- [Rutas de la Aplicación](#️-rutas-de-la-aplicación)
 
 ## 🎯 Descripción del Proyecto
 
