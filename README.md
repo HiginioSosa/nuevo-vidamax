@@ -129,7 +129,7 @@ El proyecto sigue una **arquitectura basada en componentes** con separación cla
 ┌─────────────────────────────────────┐
 │           React App                 │
 │  ┌───────────────────────────────┐  │
-│  │    React Router (BrowserRouter)│  │
+│  │   React Router (BrowserRouter)│  │
 │  │  ┌─────────────────────────┐  │  │
 │  │  │     Layout Components   │  │  │
 │  │  │  - Navbar               │  │  │
@@ -143,7 +143,7 @@ El proyecto sigue una **arquitectura basada en componentes** con separación cla
 │  │  │  - Polizas              │  │  │
 │  │  └─────────────────────────┘  │  │
 │  │  ┌─────────────────────────┐  │  │
-│  │  │   Reusable Components  │  │  │
+│  │  │    Reusable Components  │  │  │
 │  │  │  - Button               │  │  │
 │  │  │  - Accordion            │  │  │
 │  │  │  - Banner               │  │  │
